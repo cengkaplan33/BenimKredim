@@ -1,0 +1,169 @@
+﻿@{
+    ViewBag.Title = "Yıllık Kazanç Simülasyonu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-xs-12" ng-controller="yillikKazancSimulasyonuController">
+    <div class="col-xs-12">
+
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-1 control-label bolder">
+                   Sicil No :
+                </label>
+                <div class="col-sm-4">
+                    <p class="form-control-static">
+                        {{ PersonelBilgileri.PersonelNo }}
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-1 control-label bolder">
+                    Ad Soyad :
+                </label>
+                <div class="col-sm-4">
+                    <p class="form-control-static">
+                        {{ PersonelBilgileri.Adi }} {{ PersonelBilgileri.Soyadi }}
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-1 control-label bolder">
+                    Şirket :
+                </label>
+                <div class="col-sm-4">
+                    <p class="form-control-static">
+                        {{ PersonelBilgileri.AktifCalisma.IKSirket.Unvani }}
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-1 control-label bolder">
+                    Dönem : 
+                </label>
+                <div class="col-sm-4">
+                    <p class="form-control-static">
+                       2015 Yılı
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <br />
+    <div class="col-xs-12">
+        <table id="sample-table-1" ng-show="ArsivIzinler.length !== 0" class="table table-striped table-condensed table-bordered table-hover">
+            <thead class="thin-border-bottom">
+                <tr>
+                    <th></th>
+                    <th>
+                        Ocak
+                    </th>
+                    <th>
+                        Şubat
+                    </th>
+                    <th>
+                        Mart
+                    </th>
+                    <th>
+                        Nisan
+                    </th>
+                    <th>
+                        Mayıs
+                    </th>
+                    <th>
+                        Haziran
+                    </th>
+                    <th>
+                        Temmuz
+                    </th>
+                    <th>
+                        Ağustos
+                    </th>
+                    <th>
+                        Eylül
+                    </th>
+                    <th>
+                        Ekim
+                    </th>
+                    <th>
+                        Kasım
+                    </th>
+                    <th>
+                        Aralık
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ucret in personelUcretSimulasyonu">
+                    <td>
+                        <span ng-if="ucret.NetBrut == 1">
+                            <b>Toplam Brüt Kazanç</b>
+                        </span>
+                        <span ng-if="ucret.NetBrut == 0">
+                            <b>Aylik Net Kazanç + AGİ</b>
+                        </span>
+                    </td>
+                    <td>
+                        {{ ucret.Ocak }}
+                    </td>
+                    <td>
+                        {{ ucret.Subat }}
+                    </td>
+                    <td>
+                        {{ ucret.Mart }}
+                    </td>
+                    <td>
+                        {{ ucret.Nisan }}
+                    </td>
+                    <td>
+                        {{ ucret.Mayis }}
+                    </td>
+                    <td>
+                        {{ ucret.Haziran }}
+                    </td>
+                    <td>
+                        {{ ucret.Temmuz }}
+                    </td>
+                    <td>
+                        {{ ucret.Agustos }}
+                    </td>
+                    <td>
+                        {{ ucret.Eylul }}
+                    </td>
+                    <td>
+                        {{ ucret.Ekim }}
+                    </td>
+                    <td>
+                        {{ ucret.Kasim }}
+                    </td>
+                    <td>
+                        {{ ucret.Aralik }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <div class="col-xs-12">
+        <p><b>Açıklamalar </b></p>
+        <p>
+            <ul class="number-style">
+                <li>
+                    Aşağıda yer alan durumlar tablodaki hesaplamalarda değişiklik gösterir.
+                    <ul>
+                        <li>Fazla mesai, prim, istirahat, ücretsiz izin vb. kazanç ve kesinti durumunda,</li>
+                        <li>Kişinin aile durum değişikliğinde,</li>
+                        <li>Ücret değişikliği durumunda,</li>
+                    </ul>
+                </li>
+                <br />
+                <li>Yukarıdaki tabloda yer alan veriler bilgilendirme amaçlıdır.</li>
+                <br />
+                <li>Toplam brüt ve net kazanca ücret niteliğindeki tüm ödemeler dahil edilmiştir.</li>
+                <br />
+                <li>Ocak ve Şubat dönemine ait bordro verilerini "Bordro Takibi" ekranından inceleyebilirsiniz..</li>
+                <br />
+                <li>Tablo 1 Mart 2015 tarihli personel verilerine göre hesaplanmıştır.</li>
+            </ul>
+        </p>
+    </div>
+</div>
