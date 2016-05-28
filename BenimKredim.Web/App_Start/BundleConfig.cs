@@ -42,53 +42,20 @@ namespace BenimKredim.Web
 
             bundles.Add(new ScriptBundle("~/Bundles/angular").Include(
                         "~/scripts/angular.js",
-                        //"~/scripts/angular-route.js",
-                        //"~/scripts/i18n/angular-locale_tr-tr.js",
+
+                        //module
                         "~/src/app.js",
-                        //"~/src/directives/position.js",
-                        //"~/src/directives/timepicker.js",
-                        //"~/src/directives/timepicker-tpl.js",
-                        //"~/src/directives/angular-ui-tree.js",
-                        //"~/src/directives/angular-moment.js",
-                        //"~/src/directives/draganddrop.js",
-                        //"~/src/angular-gantt/dist/angular-gantt.js",
-                        //"~/src/angular-gantt/dist/angular-gantt-plugins.js",
-                        //"~/src/directives/ng-table.min.js",
+
+                        //controller
                         "~/src/controllers/tasitKredisiController.js",
-                        //"~/src/controllers/bordroController.js",
-                        //"~/src/controllers/demirbasController.js",
-                        //"~/src/controllers/izinTakvimiController.js",
-                        //"~/src/controllers/izinPlanOnayController.js",
-                        //"~/src/controllers/izinTalepOnayController.js",
-                        //"~/src/controllers/loginController.js",
-                        //"~/src/controllers/mazeretIzinController.js",
-                        //"~/src/controllers/ucretsizIzinController.js",
-                        //"~/src/controllers/ozlukBilgileriController.js",
-                        //"~/src/controllers/yillikIzinTalepController.js",
-                        //"~/src/controllers/yillikIzinPlanController.js",
-                        //"~/src/controllers/gorevlendirmeIzinController.js",
-                        //"~/src/controllers/yetkinlikController.js",
-                     //   "~/src/controllers/organizasyonSemasiController.js",
-                        "~/src/services/tasitKredisiService.js"
-                        //"~/src/services/bordroService.js",
-                        //"~/src/services/demirbasService.js",
-                        //"~/src/services/inkaService.js",
-                        //"~/src/services/idariIzinService.js",
-                        //"~/src/services/izinTakvimiService.js",
-                        //"~/src/services/izinPlanOnayService.js",
-                        //"~/src/services/izinTalepOnayService.js",
-                        //"~/src/services/loginService.js",
-                        //"~/src/services/mazeretIzinService.js",
-                        //"~/src/services/ucretsizIzinService.js",
-                        //"~/src/services/personelService.js",
-                        //"~/src/services/yillikIzinPlanService.js",
-                        //"~/src/services/yillikIzinTalepService.js",
-                        //"~/src/services/gorevlendirmeIzinService.js",
-                        //"~/src/services/yetkinlikService.js"
-                       // "~/src/services/organizasyonSemasiService.js"
+                        "~/src/controllers/konutKredisiController.js",
+                        "~/src/controllers/bireyselKrediController.js",
+
+                        //service
+                        "~/src/services/tasitKredisiService.js",
+                         "~/src/services/konutKredisiService.js",
+                          "~/src/services/bireyselKrediService.js"
                         ));
-
-
 
             BundleTable.EnableOptimizations = false;
 

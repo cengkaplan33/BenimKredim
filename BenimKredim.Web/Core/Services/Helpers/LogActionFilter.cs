@@ -17,13 +17,13 @@ namespace BenimKredim.Web.ActionFilters
                 {
                     BaseController controller = filterContext.Controller as BaseController;
 
-                    logText.Append("UserName=" + filterContext.HttpContext.User.Identity.Name);
-                    logText.Append(" Action=" + MVCUtility.GetControllerActionName());
+                    logText.Append(" IP = " + MVCUtility.GetRequestIp());
+                    logText.Append(" Action = " + MVCUtility.GetControllerActionName());
 
                     if (filterContext.HttpContext.Request.QueryString.Count > 0)
-                        logText.Append(" QueryParameters " + MVCUtility.GetQueryStringParameters(filterContext.HttpContext.Request.QueryString));
+                        logText.Append(" QueryParameters = " + MVCUtility.GetQueryStringParameters(filterContext.HttpContext.Request.QueryString));
 
-                    //TODO: OK::NOT:: TraceLevel değişkeniniweb config'e koyup okuyacağım ilgili TraceLevel'e göre log tutulmasını sağlayacağım.
+                    //TODO: OK::NOT:: TraceLevel değişkenini web config'e koyup okuyacağım ilgili TraceLevel'e göre log tutulmasını sağlayacağım.
                 }
                 catch (Exception)
                 {

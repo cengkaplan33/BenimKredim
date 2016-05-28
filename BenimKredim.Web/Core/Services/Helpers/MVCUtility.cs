@@ -26,6 +26,11 @@ namespace BenimKredim.Web.Helpers
             return routedata.GetRequiredString("action");
         }
 
+        public static string GetRequestIp()
+        {
+            return System.Web.HttpContext.Current.Request.UserHostAddress;
+        }
+
         public static string GetQueryStringParameters(NameValueCollection queryString)
         {
             StringBuilder parametersText = new StringBuilder();
