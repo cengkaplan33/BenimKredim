@@ -1,4 +1,5 @@
-﻿using BenimKredim.EntityFramework;
+﻿using BenimKredim.Common.Enums;
+using BenimKredim.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -28,17 +29,22 @@ namespace BenimKredim.Web.Services
     {
         public ListResponse<TasitKredisiModel> List(TasitKredisiSearchRequest request)
         {
-            ListResponse<TasitKredisiModel> response  = new ListResponse<TasitKredisiModel>();
+            ListResponse<TasitKredisiModel> response = new ListResponse<TasitKredisiModel>();
 
-            if(request.Vade ==0 ||request.Tutar == 0)
-            return response;
+            if (request.Vade == 0 || request.Tutar == 0)
+                return response;
 
 
-            using(var db = new   BenimKredimModel())
+            using (var db = new BenimKredimModel())
             {
-             response.Entities =  db.BankCredits.Where(x=>x.CreditTypeId == 2 & x.InstalmentCount == request.Vade).Select(x=> new TasitKredisiModel(){ BankaAdi = x.Bank.Name, VadeliTutar = (request.Tutar+ request.Tutar*x.ProfitRate)} ).ToList();
-
-
+                response.Entities = db.BankCredits.Where(x => x.CreditTypeId == (int)BankCreditType.Car & x.InstalmentCount == request.Vade)
+                    .Select(x => new TasitKredisiModel()
+                    {
+                        BankaAdi = x.Bank.Name,
+                        VadeOrani = x.ProfitRate,
+                        VadeliTutar = (request.Tutar + request.Tutar * x.ProfitRate)
+                    })
+                    .ToList();
             }
 
             return response;

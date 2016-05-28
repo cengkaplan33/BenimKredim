@@ -11,14 +11,14 @@ namespace BenimKredim.Web.Controllers
         //
         // GET: /tr/
 
-        public ActionResult TasitKredisi()
-        {
-            return View();
-        }
-        public JsonResult TasitKredisiSorgulama()
-        {
-            return Json("deneme");
-        }
+        //public ActionResult TasitKredisi()
+        //{
+        //    return View();
+        //}
+        //public JsonResult TasitKredisiSorgulama()
+        //{
+        //    return Json("deneme");
+        //}
     }
 
 }

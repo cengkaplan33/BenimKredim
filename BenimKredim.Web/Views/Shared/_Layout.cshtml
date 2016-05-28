@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html ng-app="mainApp" ng-controller="mainAppController">
+@*<html ng-app="mainApp" ng-controller="mainAppController">*@
+<html ng-app="mainApp" >
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -11,10 +12,15 @@
     <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap-theme.min.css")">
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
 
-    @Scripts.Render("~/Bundles/angular")
+    @*@Scripts.Render("~/Bundles/angular")*@
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Src/app.js"></script>
+    <script src="~/Src/controllers/tasitKredisiController.js"></script>
+    <script src="~/Src/services/tasitKredisiService.js"></script>
+
 
 </head>
-<body>
+<body ng-controller="MainController">
     @Html.Partial("_Navbar")
     @RenderBody()
 

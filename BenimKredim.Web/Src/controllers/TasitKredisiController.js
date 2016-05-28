@@ -6,7 +6,8 @@ tasitKredisiController.controller('tasitKredisiController', ['$scope', '$http', 
         VadeOrani: '',
         VadeliTutar: '',
     };
-
+    $scope.Tutar;
+    $scope.Vade;
     //$scope.FillBordroDonemler = function () {
     //    bordroService.getBordroDonem()
     //    .success(function (data, status, headers, config) {
@@ -20,25 +21,26 @@ tasitKredisiController.controller('tasitKredisiController', ['$scope', '$http', 
     //};
 
     $scope.ZimmetSozlesmesiOnayla = function (onay) {
-        alert("sads");
-        $scope.krediSorgula();
-    };
-
-    $scope.krediSorgula = function () {
 
         var request =
-        {
-            Vade: 24,
-            Tutar: 10000
-        };
+       {
+           Vade:    $scope.Vade,
+           Tutar: $scope.Tutar
+       };
+        $scope.krediSorgula(request);
+    };
+
+    $scope.krediSorgula = function (request) {
 
         tasitKredisiService
         .searchh(request)
         .success(function (data, status, headers, config) {
-
-            $scope.tasitKredileri = data.Data.Entities;
-        });
+            $scope.tasitKredileri = data.Entities;
+        })
+        .error(function (error){
+            console.log(error);
+    });
     };
 
-    $scope.krediSorgula();
+    //$scope.krediSorgula();
 }]);

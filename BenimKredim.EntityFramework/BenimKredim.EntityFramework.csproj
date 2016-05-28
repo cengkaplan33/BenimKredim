@@ -48,13 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201605262232456_Initial.cs" />
-    <Compile Include="Migrations\201605262232456_Initial.Designer.cs">
-      <DependentUpon>201605262232456_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201605281142169_Initial.cs" />
+    <Compile Include="Migrations\201605281142169_Initial.Designer.cs">
+      <DependentUpon>201605281142169_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BenimKredimModel.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Model\Common\Enums.cs" />
     <Compile Include="Model\Common\AuditableEntityBase.cs" />
     <Compile Include="Model\Common\EntityBase.cs" />
     <Compile Include="Model\Common\IAuditableEntity.cs" />
@@ -69,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605262232456_Initial.resx">
-      <DependentUpon>201605262232456_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605281142169_Initial.resx">
+      <DependentUpon>201605281142169_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

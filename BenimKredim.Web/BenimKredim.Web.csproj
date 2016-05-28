@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Core\ServiceHandler.cs" />
     <Compile Include="TasitKredisi\TasitKredisiService.cs" />
     <Compile Include="TasitKredisi\TasitKredisiController.cs" />
     <Compile Include="Controllers\KrediSorgulama.cs" />
@@ -1313,7 +1314,7 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Shared\_navbar.cshtml" />
     <Content Include="Views\Site\AnaSayfa.cshtml" />
-    <Content Include="Views\KrediSorgulama\TasitKredisi.cshtml" />
+    <Content Include="Views\TasitKredisi\Index.cshtml" />
     <Content Include="Src\angular-gantt\.editorconfig" />
     <Content Include="Src\angular-gantt\.jshintrc" />
     <Content Include="Src\angular-gantt\.npmignore" />

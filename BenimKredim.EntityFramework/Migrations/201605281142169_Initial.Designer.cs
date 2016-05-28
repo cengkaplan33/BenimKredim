@@ -13,7 +13,7 @@ namespace BenimKredim.EntityFramework.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201605262232456_Initial"; }
+            get { return "201605281142169_Initial"; }
         }
         
         string IMigrationMetadata.Source

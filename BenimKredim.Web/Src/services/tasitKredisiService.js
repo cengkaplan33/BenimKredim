@@ -2,11 +2,11 @@
 .module('mainApp.services.tasitKredisi.tasitKredisiService', [])
 .factory('tasitKredisiService', ['$http', function ($http) {
     return {
-        searchh: function () {
+        searchh: function (request) {
             return $http
             ({
                 method: 'POST',
-                url: Q.ResolveUrl('TasitKredisi/Search'),
+                url: 'Search',
                 data: request
             });
         },

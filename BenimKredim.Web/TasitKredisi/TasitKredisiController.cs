@@ -5,27 +5,35 @@ using System.Web.Mvc;
 
 namespace BenimKredim.Web.Controllers
 {
-    public class TasitKredisiController : Controller
+    public class TasitKredisiController : BaseController
     {
-        public JsonResult Search(TasitKredisiSearchRequest request)
+        public ActionResult Index()
         {
-            return Json("adsa d");
+            return View();
         }
 
-        public JsonResult Search(int Vade, int Tutar)
+        //public JsonResult Search(TasitKredisiSearchRequest request)
+        //{
+        //    return Json("adsa d");
+        //}
+
+        public JsonNetResult Search(TasitKredisiSearchRequest request)
         {
-            try
-            {
-                var response = new TasitKredisiService().List(new TasitKredisiSearchRequest() { Tutar = Tutar, Vade = Vade });
-                return Json(new { total = response.Entities.Count, data = response.Entities }, JsonRequestBehavior.AllowGet);
-                //}   var data = Pages.OrderBy(m => m.Id).Skip(skip).Take(pageSize).ToList();
-                //    return Json(new { total = total, data = data }, JsonRequestBehavior.AllowGet);
-            }
-            catch (Exception exception)
-            {
-                Response.StatusCode = 500;
-                return Json(new { result = "işlem yaparken hata oluştu" }, JsonRequestBehavior.AllowGet);
-            }
+         
+           return     this.Respond(() => new TasitKredisiService().List(new TasitKredisiSearchRequest() { Tutar = request.Tutar, Vade = request.Vade }));
+
+           //try
+           //{
+           // //var response = new TasitKredisiService().List(new TasitKredisiSearchRequest() { Tutar = request.Tutar, Vade = request.Vade });
+           //     //return Json(new { total = response.Entities.Count, data = response.Entities }, JsonRequestBehavior.AllowGet);
+           //     ////}   var data = Pages.OrderBy(m => m.Id).Skip(skip).Take(pageSize).ToList();
+           //     //    return Json(new { total = total, data = data }, JsonRequestBehavior.AllowGet);
+           // }
+           // catch (Exception exception)
+           // {
+           //     Response.StatusCode = 500;
+           //     return Json(new { result = "işlem yaparken hata oluştu" }, JsonRequestBehavior.AllowGet);
+           // }
         }
     }
 }
