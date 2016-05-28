@@ -13,7 +13,16 @@ bireyselKrediController.controller('bireyselKrediController', ['$scope', '$http'
     $scope.VadeleriGetir = function () {
         bireyselKrediService.VadeListesi()
         .success(function (data, status, headers, config) {
-            $scope.Vadeler = data.Entities;
+            if (data.Error == undefined) {
+                $scope.Vadeler = data.Entities;
+            }
+            else {
+                console.log(data.Error);
+                alert(data.Error.Message);
+            }
+        })
+        .error(function (error) {
+            console.log(error);
         });
     };
 

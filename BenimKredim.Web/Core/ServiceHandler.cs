@@ -14,7 +14,13 @@ namespace BenimKredim.Web.Base
             var response = new ServiceResponse();
             var error = new ServiceError();
 
+            error.Code = "Exception";
+            error.Message = exception.Message;
+            error.Details = exception.ToString();
+
+
             response.Error = error;
+
             return response;
         }
 
