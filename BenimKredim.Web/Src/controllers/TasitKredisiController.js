@@ -6,31 +6,23 @@ tasitKredisiController.controller('tasitKredisiController', ['$scope', '$http', 
         VadeOrani: '',
         VadeliTutar: '',
     };
+
     $scope.Tutar;
     $scope.Vade;
-    //$scope.FillBordroDonemler = function () {
-    //    bordroService.getBordroDonem()
-    //    .success(function (data, status, headers, config) {
-    //        $scope.BordroDonemler = data.Data.IKBordroDonemList;
-    //        if (data.Data.IKBordroDonemList.length > 0) {
-    //            var firstData = $scope.BordroDonemler[0].ObjId;
-    //            $scope.selectedBordro = firstData;
-    //            $scope.FillData(firstData);
-    //        }
-    //    });
-    //};
 
-    $scope.ZimmetSozlesmesiOnayla = function (onay) {
-
-        var request =
-       {
-           Vade:    $scope.Vade,
-           Tutar: $scope.Tutar
-       };
-        $scope.krediSorgula(request);
+    $scope.VadeleriGetir = function () {
+        tasitKredisiService.VadeListesi()
+        .success(function (data, status, headers, config) {
+            $scope.Vadeler = data.Entities;
+        });
     };
 
-    $scope.krediSorgula = function (request) {
+    $scope.krediSorgula = function () {
+
+        var request = {
+            Vade: $scope.Vade,
+            Tutar: $scope.Tutar
+        };
 
         tasitKredisiService
         .searchh(request)
@@ -39,8 +31,9 @@ tasitKredisiController.controller('tasitKredisiController', ['$scope', '$http', 
         })
         .error(function (error){
             console.log(error);
-    });
+        });
     };
 
-    //$scope.krediSorgula();
+    $scope.VadeleriGetir();
+   
 }]);

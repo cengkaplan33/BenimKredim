@@ -1257,20 +1257,6 @@
     <Content Include="Src\angular-gantt\test\spec\logic\plugins.spec.js" />
     <Content Include="Src\app.js" />
     <Content Include="Src\controllers\tasitKredisiController.js" />
-    <Content Include="Src\controllers\bordroController.js" />
-    <Content Include="Src\controllers\demirbasController.js" />
-    <Content Include="Src\controllers\gorevlendirmeIzinController.js" />
-    <Content Include="Src\controllers\izinPlanOnayController.js" />
-    <Content Include="Src\controllers\izinTakvimiController.js" />
-    <Content Include="Src\controllers\izinTalepOnayController.js" />
-    <Content Include="Src\controllers\loginController.js" />
-    <Content Include="Src\controllers\mazeretIzinController.js" />
-    <Content Include="Src\controllers\organizasyonSemasiController.js" />
-    <Content Include="Src\controllers\ozlukBilgileriController.js" />
-    <Content Include="Src\controllers\ucretsizIzinController.js" />
-    <Content Include="Src\controllers\yetkinlikController.js" />
-    <Content Include="Src\controllers\yillikIzinPlanController.js" />
-    <Content Include="Src\controllers\yillikIzinTalepController.js" />
     <Content Include="Src\directives\angular-moment.js" />
     <Content Include="Src\directives\angular-moment.min.js" />
     <Content Include="Src\directives\angular-ui-tree.js" />
@@ -1283,22 +1269,6 @@
     <Content Include="Src\directives\uncompressed\ng-table.js" />
     <Content Include="Src\npm.js" />
     <Content Include="Src\services\tasitKredisiService.js" />
-    <Content Include="Src\services\bordroService.js" />
-    <Content Include="Src\services\demirbasService.js" />
-    <Content Include="Src\services\gorevlendirmeIzinService.js" />
-    <Content Include="Src\services\idariIzinService.js" />
-    <Content Include="Src\services\inkaService.js" />
-    <Content Include="Src\services\izinPlanOnayService.js" />
-    <Content Include="Src\services\izinTakvimiService.js" />
-    <Content Include="Src\services\izinTalepOnayService.js" />
-    <Content Include="Src\services\loginService.js" />
-    <Content Include="Src\services\mazeretIzinService.js" />
-    <Content Include="Src\services\organizasyonSemasiService.js" />
-    <Content Include="Src\services\personelService.js" />
-    <Content Include="Src\services\ucretsizIzinService.js" />
-    <Content Include="Src\services\yetkinlikService.js" />
-    <Content Include="Src\services\yillikIzinPlanService.js" />
-    <Content Include="Src\services\yillikIzinTalepService.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1310,7 +1280,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Site\KrediSorgulama.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Shared\_navbar.cshtml" />
     <Content Include="Views\Site\AnaSayfa.cshtml" />
@@ -1392,7 +1361,6 @@
     <Content Include="Src\angular-gantt\resources\angular-gantt.ai" />
     <Content Include="Src\angular-gantt\resources\angular-gantt.eps" />
     <Content Include="Src\angular-gantt\test\spec\.jshintrc" />
-    <Content Include="Src\controllers\gorevlendirmeIzinController.js.orig" />
     <Content Include="Src\directives\angular-moment.min.js.map" />
     <Content Include="Src\directives\ng-table.min.js.map" />
   </ItemGroup>
@@ -1402,7 +1370,6 @@
     <Folder Include="Services\" />
     <Folder Include="Src\app\directives\" />
     <Folder Include="Src\app\filters\" />
-    <Folder Include="Src\filters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

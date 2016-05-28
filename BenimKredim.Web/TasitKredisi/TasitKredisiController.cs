@@ -35,5 +35,10 @@ namespace BenimKredim.Web.Controllers
            //     return Json(new { result = "işlem yaparken hata oluştu" }, JsonRequestBehavior.AllowGet);
            // }
         }
+
+        public JsonNetResult VadeListesi()
+        {
+            return this.Respond(() => new TasitKredisiService().VadeListesi());
+        }
     }
 }

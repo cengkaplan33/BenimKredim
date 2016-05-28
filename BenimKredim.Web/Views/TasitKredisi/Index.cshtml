@@ -24,12 +24,8 @@
                                 Vade (Ay)
                             </label>
                             <div class="col-xs-10 col-sm-4">
-                                <select class="form-control input-sm required" id="Vade" ng-model="Vade">
-                                    <option value="12">12 ay</option>
-                                    <option value="24">24 ay</option>
-                                    <option value="48">48 ay</option>
-                                    <option value="60">60 ay</option>
-                                    <option value="72">72 ay</option>
+                                <select class="form-control input-sm required" id="Vade" ng-model="Vade" data-placeholder="Vade Seçiniz...">
+                                    <option ng-repeat="vade in Vadeler" value="{{ vade.Vade }}" ng-cloak> {{ vade.Vade }} </option>
                                 </select>
                             </div>
                         </div>
@@ -39,25 +35,25 @@
                             </label>
                             <div class="col-xs-10 col-sm-4">
                                 <div class="input-group">
-                                    <input class="form-control input-sm required" type="text" ng-model="Tutar" />
+                                    <input class="form-control input-sm required" type="text" ng-model="Tutar"  />
                                 </div>
                             </div>
                         </div>
+                      
                         <div class="clearfix">
                             <div class="col-md-offset-3 col-md-9">
-                                <button class="btn btn-info  " type="button" data-ng-click="ZimmetSozlesmesiOnayla(1)">
+                                <button class="btn btn-info  " type="button" data-ng-click="krediSorgula()" >
                                     Size en uygun kredi için tıklayınız...
                                 </button>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </form>
-</div>
-<br />
-<div class="col-xs-12" ng-controller="tasitKredisiController">
+    <br />
     <div class="col-xs-12 col-sm-12 widget-container-col ui-sortable" ng-show="!ErrorShow">
         <div class="widget-box widget-color-dark ui-sortable-handle">
             <div class="widget-body">
@@ -66,13 +62,13 @@
                         <button type="button" class="close" data-dismiss="alert">
                             <i class="icon-remove"></i>
                         </button>
-                        <strong>Kayıt Yok!</strong> belirttiğiniz kriterlere uygun kayıt bulunamadı. 
+                        <strong>Kayıt Yok!</strong> belirttiğiniz kriterlere uygun kayıt bulunamadı.
                         <br />
                     </div>
                     <div class="alert alert-info" ng-show="tasitKredileri.length > 0">
                         Arama sonucu <strong> size</strong> uygun krediler.
                     </div>
-                    <table id="sample-table-1" ng-show="tasitKredileri.length !== 0" class="table table-striped table-bordered table-hover">
+                    <table id="sample-table-1" ng-show="tasitKredileri.length > 0" class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>
@@ -82,21 +78,28 @@
                                     Vade Oranı
                                 </th>
                                 <th>
-                                    Vadeli Tutar
+                                      Taksit Tutarı
+                                </th>
+                                <th>
+                                      Toplam Tutar
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="tasitKredisi in tasitKredileri">
+                            <tr ng-repeat="kredi in tasitKredileri">
                                 <td>
-                                    {{ tasitKredisi.BankaAdi }}
+                                    {{ kredi.BankaAdi }}
                                 </td>
                                 <td>
-                                    {{ tasitKredisi.VadeOrani }}
+                                    {{ kredi.VadeOrani }}
                                 </td>
                                 <td>
-                                    {{ tasitKredisi.VadeliTutar }}
+                                    {{ kredi.VadeliTutar/Vade | number:4  }}
                                 </td>
+                                <td>
+                                    {{ kredi.VadeliTutar  | number:4 }}
+                                </td>
+                                
                             </tr>
                         </tbody>
                     </table>

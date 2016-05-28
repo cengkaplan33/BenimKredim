@@ -10,6 +10,13 @@
                 data: request
             });
         },
+        VadeListesi: function () {
+            return $http
+            ({
+                method: 'POST',
+                url: 'VadeListesi',
+            });
+        },
     };
 }
 ]);

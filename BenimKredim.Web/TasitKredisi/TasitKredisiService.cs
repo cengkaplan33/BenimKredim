@@ -25,6 +25,11 @@ namespace BenimKredim.Web.Services
         public Decimal VadeliTutar { get; set; }
     }
 
+    public class VadeModel
+    {
+        public int Vade { get; set; }
+    }
+
     public partial class TasitKredisiService
     {
         public ListResponse<TasitKredisiModel> List(TasitKredisiSearchRequest request)
@@ -49,5 +54,23 @@ namespace BenimKredim.Web.Services
 
             return response;
         }
+
+        public ListResponse<VadeModel> VadeListesi()
+        {
+            ListResponse<VadeModel> response = new ListResponse<VadeModel>();
+
+            using (var db = new BenimKredimModel())
+            {
+                response.Entities = db.BankCredits.Where(x => x.CreditTypeId == (int)BankCreditType.Car)
+                    .Select(x => new VadeModel { Vade = x.InstalmentCount })
+                    .Distinct().OrderBy(x => x.Vade)
+                    .ToList();
+
+                response.TotalCount = response.Entities.Count();
+            }
+
+            return response;
+        }
+
     }
 }
